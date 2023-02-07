@@ -16,7 +16,6 @@ public class RencontreDTO {
         this.lieuTournoi = lieuTournoi;
     }
 
-
     public int getId() {
         return id;
     }
@@ -56,6 +55,5 @@ public class RencontreDTO {
     public void setLieuTournoi(String lieuTournoi) {
         this.lieuTournoi = lieuTournoi;
     }
-    
 
 }

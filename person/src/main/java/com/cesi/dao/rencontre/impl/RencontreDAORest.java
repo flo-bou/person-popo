@@ -35,7 +35,6 @@ public class RencontreDAORest implements RencontreDAO {
         Rencontre retour = response.getBody();
         
         return retour;
-
     }
 
 

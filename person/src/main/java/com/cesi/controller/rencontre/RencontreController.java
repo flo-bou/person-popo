@@ -2,12 +2,10 @@ package com.cesi.controller.rencontre;
 
 import com.cesi.controller.rencontre.model.Rencontre;
 import com.cesi.services.rencontre.RencontreService;
-
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -28,5 +26,4 @@ public class RencontreController {
         Rencontre blabla = rencontreService.addRencontre(rencontre);
         return blabla;
     }
-
 }

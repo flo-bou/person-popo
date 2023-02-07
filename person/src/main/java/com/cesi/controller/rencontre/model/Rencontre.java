@@ -9,10 +9,12 @@ public class Rencontre {
     private String lieuTournoi;
     private Integer annee;
 
-    public Rencontre(@JsonProperty("NuméroGagnant") Integer nuGagnant,
-                    @JsonProperty("NuméroPerdant") Integer nuPerdant,
+    public Rencontre(@JsonProperty("nuGagnant") Integer nuGagnant, 
+                    @JsonProperty("id") Integer id,
+                    @JsonProperty("nuPerdant") Integer nuPerdant,
                     @JsonProperty("annee") Integer annee,
                     @JsonProperty("lieuTournoi") String lieuTournoi){
+        this.id=id;
         this.nuGagnant = nuGagnant;
         this.nuPerdant = nuPerdant;
         this.annee = annee;
@@ -23,36 +25,36 @@ public class Rencontre {
     public String toString() {
         return this.nuGagnant +" : "+this.nuPerdant + " / " + this.lieuTournoi;
     }
-    
-    public int getId() {
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Integer getGagnant() {
+    public Integer getNuGagnant() {
         return nuGagnant;
     }
 
-    public void setGagnant(int nuGagnant) {
+    public void setNuGagnant(Integer nuGagnant) {
         this.nuGagnant = nuGagnant;
     }
 
-    public Integer getPerdant() {
+    public Integer getNuPerdant() {
         return nuPerdant;
     }
 
-    public void setPerdant(int nuPerdant) {
+    public void setNuPerdant(Integer nuPerdant) {
         this.nuPerdant = nuPerdant;
     }
 
-    public int getAnnee() {
+    public Integer getAnnee() {
         return annee;
     }
 
-    public void setAnnee(int annee) {
+    public void setAnnee(Integer annee) {
         this.annee = annee;
     }
 

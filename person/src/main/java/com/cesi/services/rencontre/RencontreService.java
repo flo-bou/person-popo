@@ -1,6 +1,5 @@
 package com.cesi.services.rencontre;
 
-import org.mapstruct.Qualifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
