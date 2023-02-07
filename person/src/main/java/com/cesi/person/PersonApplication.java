@@ -17,4 +17,8 @@ public class PersonApplication {
 		SpringApplication.run(PersonApplication.class, args);
 	}
 
+	@Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
