@@ -1,7 +1,8 @@
 package com.cesi.controller.rencontre;
 
 import com.cesi.controller.person.model.Person;
-import com.cesi.services.PersonService;
+import com.cesi.services.RencontreService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,11 @@ public class RencontreController {
 
     private static final Logger LOG = LoggerFactory.getLogger(RencontreController.class);
 
+    private final RencontreService rencontreService;
+
+    @Autowired
+    public RencontreController(RencontreService rencontreService) {
+        this.rencontreService = rencontreService;
+    }
 
 }
