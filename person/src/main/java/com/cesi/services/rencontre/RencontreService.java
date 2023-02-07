@@ -1,5 +1,7 @@
 package com.cesi.services.rencontre;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,22 @@ public class RencontreService {
 
     public Rencontre addRencontre(Rencontre rencontre) {
         return rencontreDAO.addRencontre(rencontre);
+    }
+
+    public Boolean deleteRencontre(Integer id) {
+        return rencontreDAO.deleteRencontre(id);
+    }
+
+    public List<Rencontre> getAllRencontres() {
+        return rencontreDAO.getAllRencontres();
+    }
+
+    public List<Rencontre> getRencontresFilter(Integer nuGagnant, Integer nuPerdant) {
+        return rencontreDAO.getRencontresFilter(nuGagnant, nuPerdant);
+    }
+
+    public Rencontre updateRencontres(Rencontre rencontre, Integer id) {
+        return rencontreDAO.updateRencontres(rencontre, id);
     }
 }
 

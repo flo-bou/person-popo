@@ -9,12 +9,10 @@ public class Rencontre {
     private String lieuTournoi;
     private Integer annee;
 
-    public Rencontre(@JsonProperty("nuGagnant") Integer nuGagnant, 
-                    @JsonProperty("id") Integer id,
+    public Rencontre(@JsonProperty("nuGagnant") Integer nuGagnant,
                     @JsonProperty("nuPerdant") Integer nuPerdant,
                     @JsonProperty("annee") Integer annee,
                     @JsonProperty("lieuTournoi") String lieuTournoi){
-        this.id=id;
         this.nuGagnant = nuGagnant;
         this.nuPerdant = nuPerdant;
         this.annee = annee;
