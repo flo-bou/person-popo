@@ -26,7 +26,7 @@ public class RencontreDAORest implements RencontreDAO {
 
         HttpEntity<Rencontre> entity = new HttpEntity<Rencontre>(rencontre, headers);
 
-
+        return null;
     }
 
 
