@@ -1,7 +1,7 @@
 package com.cesi.controller.rencontre;
 
 import com.cesi.controller.person.model.Person;
-import com.cesi.services.RencontreService;
+import com.cesi.services.rencontre.RencontreService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

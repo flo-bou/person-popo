@@ -1,5 +1,5 @@
 package com.cesi.dao.rencontre.impl;
 
-public class RencontreDaoBDD {
+public class RencontreDAORest {
     
 }

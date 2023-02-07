@@ -1,4 +1,4 @@
-package com.cesi.services;
+package com.cesi.services.person;
 
 import com.cesi.controller.person.model.Person;
 import com.cesi.dao.person.PersonDAO;
