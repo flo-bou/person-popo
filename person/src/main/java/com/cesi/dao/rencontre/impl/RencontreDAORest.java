@@ -2,17 +2,22 @@ package com.cesi.dao.rencontre.impl;
 
 import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.client.RestTemplate;
 
 import com.cesi.controller.rencontre.model.Rencontre;
 import com.cesi.dao.rencontre.RencontreDAO;
-import com.cesi.dao.rencontre.model.RencontreDTO;
 
 @Repository //veut dire qu'on est une dao 
 public class RencontreDAORest implements RencontreDAO {
 
-    public RencontreDAORest(){
+    private RestTemplate restTemplate;
+
+    @Autowired
+    public RencontreDAORest(RestTemplate restTemplate){
+    this.restTemplate=restTemplate;
     }
 
     @Override
@@ -25,8 +30,12 @@ public class RencontreDAORest implements RencontreDAO {
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
         HttpEntity<Rencontre> entity = new HttpEntity<Rencontre>(rencontre, headers);
+        response = restTemplate.exchange(url, HttpMethod.POST, entity, Rencontre.class);
 
-        return null;
+        Rencontre retour = response.getBody();
+        
+        return retour;
+
     }
 
 

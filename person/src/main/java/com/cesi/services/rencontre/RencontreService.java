@@ -12,7 +12,7 @@ public class RencontreService {
     private final RencontreDAO rencontreDAO;
 
     @Autowired
-    public RencontreService(@Qualifier("RencontreDAORest") final RencontreDAO rencontreDAO) {
+    public RencontreService (RencontreDAO rencontreDAO) {
         this.rencontreDAO = rencontreDAO;
     }
 
