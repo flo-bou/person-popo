@@ -15,7 +15,7 @@ import java.util.List;
 
 public class RencontreController {
     
-    public static final String NOT_FOUND_MESSAGE = "Person not found";
+    public static final String NOT_FOUND_MESSAGE = "Rencontre not found";
 
     private static final Logger LOG = LoggerFactory.getLogger(RencontreController.class);
 
