@@ -1,6 +1,6 @@
 package com.cesi.dao.person.impl;
 
-import com.cesi.controller.person.model.person;
+import com.cesi.controller.person.model.Person;
 import com.cesi.dao.person.PersonDAO;
 import com.cesi.dao.person.model.PersonDTO;
 import org.slf4j.Logger;
@@ -47,17 +47,17 @@ import java.util.List;
         };
 
             @Override
-            public List<person> getAllPersons() {
+            public List<Person> getAllPersons() {
 
-                List<person> listPerson = null;
+                List<Person> listPerson = null;
                 List<PersonDTO> dtos = this.jdbcTemplate.query(
                         "select * from person",
                         this.rowMapper);
 
                 if(dtos != null && dtos.size() > 0){
-                    listPerson = new ArrayList<person>();
+                    listPerson = new ArrayList<Person>();
                     for(PersonDTO dto : dtos) {
-                        person resp = new person();
+                        Person resp = new Person();
                         resp.setId(dto.getId());
                         resp.setNom(dto.getNom());
                         resp.setPrenom(dto.getPrenom());
@@ -95,7 +95,7 @@ import java.util.List;
          * - Exemple de SimpleJdbcInsert
          */
         @Override
-        public person addPerson(person person) {
+        public Person addPerson(Person person) {
 
             // initialisation du POJO de retour
             PersonDTO dto = new PersonDTO();
@@ -123,7 +123,7 @@ import java.util.List;
                     this.rowMapper,
                     person.getNom()).get(0);
 
-            person resp = new person();
+            Person resp = new Person();
             if(dto != null){
                 resp.setId(dto.getId());
                 resp.setNom(dto.getNom());
@@ -141,9 +141,9 @@ import java.util.List;
          */
         @Cacheable(value = "PersonDTO")
         @Override
-        public List<person> getPersonsFilter(String id,String name) {
+        public List<Person> getPersonsFilter(String id,String name) {
 
-            List<person> listPerson = null;
+            List<Person> listPerson = null;
             boolean deuxParam = false;
 
             String query = "select * from person where";
@@ -163,9 +163,9 @@ import java.util.List;
                     this.rowMapper);
 
             if(dtos != null && dtos.size() > 0){
-                listPerson = new ArrayList<person>();
+                listPerson = new ArrayList<Person>();
                 for(PersonDTO dto : dtos) {
-                    person resp = new person();
+                    Person resp = new Person();
                     resp.setId(dto.getId());
                     resp.setNom(dto.getNom());
                     resp.setPrenom(dto.getPrenom());
@@ -180,7 +180,7 @@ import java.util.List;
         }
 
     @Override
-    public person findById(Integer id) {
+    public Person findById(Integer id) {
         // initialisation du POJO de retour
         List<PersonDTO> dto = new ArrayList<PersonDTO>();
 
@@ -189,10 +189,10 @@ import java.util.List;
                 "select * from person where id = ?",
                 this.rowMapper,
                 id);
-        person resp = null;
+        Person resp = null;
 
         if(dto != null && dto.size() > 0){
-                resp = new person();
+                resp = new Person();
                 resp.setId(dto.get(0).getId());
                 resp.setNom(dto.get(0).getNom());
                 resp.setPrenom(dto.get(0).getPrenom());
@@ -204,7 +204,7 @@ import java.util.List;
     }
 
     @Override
-    public person update(person person) {
+    public Person update(Person person) {
         try {
             String query = "UPDATE person SET ";
             boolean deuxParam = false;
@@ -239,14 +239,14 @@ import java.util.List;
             query+= " WHERE id = '" + person.getId() + "'";
 
             int count = this.jdbcTemplate.update(query);
-            person resp = null;
+            Person resp = null;
 
             if(count>0){
                 // si existe déjà ou si il vient d'être crée, lecture en base
                 List<PersonDTO> dto = this.jdbcTemplate.query("select * from person where id = ?", this.rowMapper, person.getId());
 
                 if(dto != null && dto.size() > 0){
-                    resp = new person();
+                    resp = new Person();
                     resp.setId(dto.get(0).getId());
                     resp.setNom(dto.get(0).getNom());
                     resp.setPrenom(dto.get(0).getPrenom());

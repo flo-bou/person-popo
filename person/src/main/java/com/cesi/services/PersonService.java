@@ -1,6 +1,6 @@
 package com.cesi.services;
 
-import com.cesi.controller.person.model.person;
+import com.cesi.controller.person.model.Person;
 import com.cesi.dao.person.PersonDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class personService {
+public class PersonService {
 
     private final PersonDAO personDAO;
 
     @Autowired
-    public personService(@Qualifier("personDaoBDD") final PersonDAO personDAO) {
+    public PersonService(@Qualifier("personDaoBDD") final PersonDAO personDAO) {
         this.personDAO = personDAO;
     }
 
@@ -22,19 +22,19 @@ public class personService {
         return personDAO.deletePerson(id);
     }
 
-    public List<person> getAllPersons() {
+    public List<Person> getAllPersons() {
         return personDAO.getAllPersons();
     }
 
-    public List<person> getPersonsFilter(String id,String nom) {
+    public List<Person> getPersonsFilter(String id,String nom) {
         return personDAO.getPersonsFilter(id,nom);
     }
 
-    public person addPerson(person person){
+    public Person addPerson(Person person){
         return personDAO.addPerson(person);
     }
 
-    public person update(person person,Integer id){
+    public Person update(Person person,Integer id){
         if(this.personDAO.findById(id) != null){
             person.setId(id);
             return this.personDAO.update(person);

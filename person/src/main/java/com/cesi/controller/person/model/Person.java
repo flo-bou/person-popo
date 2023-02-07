@@ -3,7 +3,7 @@ package com.cesi.controller.person.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class person {
+public class Person {
 
     private Integer id;
     private String nom;
@@ -12,7 +12,7 @@ public class person {
     private String nationalite;
 
     @JsonCreator
-    public person(@JsonProperty("id") Integer id,
+    public Person(@JsonProperty("id") Integer id,
                   @JsonProperty("nom") String nom,
                   @JsonProperty("prenom") String prenom,
                   @JsonProperty("anneeNaissance") Integer anneeNaissance,
@@ -25,10 +25,10 @@ public class person {
     }
 
     // UGLY ! public void constructor and setters 4 mapstruct
-    public person() {
+    public Person() {
     }
 
-    public person(@JsonProperty("nom") String nom,
+    public Person(@JsonProperty("nom") String nom,
                   @JsonProperty("prenom") String prenom) {
         this.nom = nom;
         this.prenom = prenom;

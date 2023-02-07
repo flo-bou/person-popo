@@ -1,6 +1,6 @@
 package com.cesi.person;
 
-import com.cesi.controller.person.model.person;
+import com.cesi.controller.person.model.Person;
 import com.cesi.dao.person.impl.PersonDaoBDD;
 
 import javax.annotation.PostConstruct;
