@@ -56,4 +56,5 @@ public class PersonDTO {
     public void setNationalite(String nationalite) {
         this.nationalite = nationalite;
     }
+    
 }

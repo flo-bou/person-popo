@@ -1,12 +1,20 @@
 package com.cesi.dao.person;
 
-import com.cesi.dao.person.model.PersonDTO;
+import com.cesi.controller.person.model.person;
 
-public class PersonDAO {
+import java.util.List;
+
+public interface PersonDAO {
+
     boolean deletePerson(Integer id);
 
-    PersonDTO addPerson(PersonDTO person);
+    person addPerson(person person);
 
-    List<PersonDTO> getAllPersons();
+    List<person> getAllPersons();
 
+    List<person> getPersonsFilter(String id,String nom);
+
+    person findById(Integer id);
+
+    person update(person person);
 }
