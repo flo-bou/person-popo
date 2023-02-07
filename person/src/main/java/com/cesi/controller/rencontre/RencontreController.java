@@ -1,29 +1,29 @@
 package com.cesi.controller.rencontre;
 
-import com.cesi.controller.person.model.Person;
+import com.cesi.controller.rencontre.model.Rencontre;
 import com.cesi.services.rencontre.RencontreService;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 public class RencontreController {
     
     public static final String NOT_FOUND_MESSAGE = "Rencontre not found";
 
-    private static final Logger LOG = LoggerFactory.getLogger(RencontreController.class);
-
     private final RencontreService rencontreService;
 
     @Autowired
     public RencontreController(RencontreService rencontreService) {
         this.rencontreService = rencontreService;
+    }
+
+    @PostMapping("/rencontres")
+    public Rencontre tartempion(@RequestBody Rencontre rencontre){
+        Rencontre blabla = rencontreService.addRencontre(rencontre);
+        return blabla;
     }
 
 }

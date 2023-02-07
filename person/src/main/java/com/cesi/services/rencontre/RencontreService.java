@@ -3,6 +3,7 @@ package com.cesi.services.rencontre;
 import org.mapstruct.Qualifier;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.cesi.controller.rencontre.model.Rencontre;
 import com.cesi.dao.rencontre.RencontreDAO;
 
 public class RencontreService {
@@ -13,8 +14,8 @@ public class RencontreService {
         this.rencontreDAO = rencontreDAO;
     }
 
-    public boolean deleteById(final Integer id) {
-        return rencontreDAO.deleteRencontre(id);
+    public Rencontre addRencontre(Rencontre rencontre) {
+        return rencontreDAO.addRencontre(rencontre);
     }
 }
 
