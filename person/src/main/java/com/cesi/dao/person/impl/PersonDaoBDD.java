@@ -1,5 +1,6 @@
 package com.cesi.dao.person.impl;
 
+import com.cesi.controller.newPerson.model.NewPerson;
 import com.cesi.controller.person.model.Person;
 import com.cesi.dao.person.PersonDAO;
 import com.cesi.dao.person.model.PersonDTO;
@@ -259,5 +260,11 @@ import java.util.List;
             LOG.error("could not update: {}", person.getId(), e);
         }
         return person;
+    }
+
+    @Override
+    public NewPerson update(NewPerson newPerson) {
+        // TODO Auto-generated method stub
+        return null;
     }
 }

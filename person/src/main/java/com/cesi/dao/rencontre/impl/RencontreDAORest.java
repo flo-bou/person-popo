@@ -25,7 +25,7 @@ public class RencontreDAORest implements RencontreDAO {
     public Rencontre addRencontre(Rencontre rencontre) {
         ResponseEntity<Rencontre> response;
 
-        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu85.gitpod.io/rencontres";
+        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu86.gitpod.io/rencontres";
 
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -44,7 +44,7 @@ public class RencontreDAORest implements RencontreDAO {
         ResponseEntity<Boolean> response;
 
         //
-        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu85.gitpod.io/rencontres/id="+id;
+        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu86.gitpod.io/rencontres/id="+id;
 
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -63,7 +63,7 @@ public class RencontreDAORest implements RencontreDAO {
         ResponseEntity<Rencontre[]> response;
 
         //URL du serv + potentiellement parametres
-        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu85.gitpod.io/rencontres/";
+        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu86.gitpod.io/rencontres/";
 
         //declaration du header
         HttpHeaders headers = new HttpHeaders();
@@ -86,7 +86,7 @@ public class RencontreDAORest implements RencontreDAO {
         //declare la réponse
         ResponseEntity<Rencontre[]> response;
 
-        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu85.gitpod.io/rencontres/?";
+        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu86.gitpod.io/rencontres/?";
         
         //URL du serv + potentiellement parametres
         if(nuPerdant == null){
@@ -120,7 +120,7 @@ public class RencontreDAORest implements RencontreDAO {
     public Rencontre updateRencontres(Rencontre rencontre, Integer id) {
         ResponseEntity<Rencontre> response;
 
-        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu85.gitpod.io/rencontres/id=" + id;
+        String url = "https://8080-romainvisbec-springcesi-pww6n510xt2.ws-eu86.gitpod.io/rencontres/id=" + id;
 
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));

@@ -27,7 +27,11 @@ public class NewPersonService {
 
     public List<NewPerson> getAllPersons() {
         List<Person> persons = personDAO.getAllPersons();
-        List<Rencontre> rencontres = rencontreDAO.getAllRencontres();
+        for (Person person : persons){
+            
+        }
+
+        /*List<Rencontre> rencontres = rencontreDAO.getAllRencontres();
         for (Person person : persons){
             int nbVictoire = 0 ;
             int nbDefaite = 0;
@@ -36,7 +40,9 @@ public class NewPersonService {
                 if(rencontre.getNuPerdant().equals(person.getId())){nbDefaite++;}
             }
 
-        }
+        }*/
+
+
         return null;
     }
 

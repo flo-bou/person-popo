@@ -35,8 +35,6 @@ public class NewPersonController {
         try {
             if (nom == null) {
                 res = this.newPersonService.getAllPersons();
-            } else {
-                res = this.newPersonService.getPersonsFilter(nom);
             }
 
         } catch (final Exception e) {
