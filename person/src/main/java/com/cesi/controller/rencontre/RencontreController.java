@@ -23,8 +23,6 @@ public class RencontreController {
     
     public static final String NOT_FOUND_MESSAGE = "Rencontre not found";
 
-    private final String RencontreService = null;
-
     private final RencontreService rencontreService;
 
     @Autowired

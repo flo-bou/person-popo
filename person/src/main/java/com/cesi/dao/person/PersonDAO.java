@@ -1,5 +1,6 @@
 package com.cesi.dao.person;
 
+import com.cesi.controller.newPerson.model.NewPerson;
 import com.cesi.controller.person.model.Person;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface PersonDAO {
     Person findById(Integer id);
 
     Person update(Person person);
+
+    NewPerson update(NewPerson newPerson);
 }

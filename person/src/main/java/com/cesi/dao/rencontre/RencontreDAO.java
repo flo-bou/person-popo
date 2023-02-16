@@ -11,7 +11,7 @@ public interface RencontreDAO {
     Boolean deleteRencontre(Integer id);
 
     List<Rencontre> getAllRencontres();
-
+    
     List<Rencontre> getRencontresFilter(Integer nuGagnant, Integer nuPerdant);
 
     Rencontre updateRencontres(Rencontre rencontre, Integer id);
